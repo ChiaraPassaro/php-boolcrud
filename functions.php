@@ -1,7 +1,7 @@
 <?php
 
     //first version
-    /*function getPath(){
+    function getPath(){
         $path_server = $_SERVER['HTTP_HOST'];
         $path_folders = explode('/', $_SERVER['PHP_SELF']);
         $path_folders_number = count($path_folders);
@@ -14,7 +14,7 @@
             return $path;
         }
         return $path_server;
-    }*/
+    }
 
     //ProjectPath by ChiaraEmanuele
     //How to Use
@@ -24,11 +24,12 @@
     function getProjectPath($calling) {
         $host = $_SERVER['HTTP_HOST'];
         $self = $_SERVER['PHP_SELF'];
+        var_dump($calling);
         return 'http://' . $host . str_replace($calling, '', $self);
     }
 
     function connectDB(){
-        include_once 'env.php';
+        include 'env.php';
         try {
             mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             $connection = new mysqli($server, $username, $password, $dbname);
