@@ -24,22 +24,22 @@
         $date_birth = $_POST['date_of_birth'];
         $document_type = $_POST['document_type'];
         $document_number = $_POST['document_number'];
-        $created_at =  NOW();
-        $updated_at =  NOW();
+
     } else {
         die('Parametri non passati');
     }
 
     $connection = connectDB();
 
-    $query = "INSERT INTO `ospiti` (`name`, `lastname`, `date_of_birth`, `document_type`, `document_number`, `created_at`, `updated_at` VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $bind_param_type = "ssssss";
-    $bind_param_var = [$name, $lastname, $date_birth, $document_type, $document_number, $created_at, $updated_at];
+    $query = "INSERT INTO `ospiti` (`name`, `lastname`, `date_of_birth`, `document_type`, `document_number`, `created_at`, `updated_at`) VALUES (?, ?, ?, ?, ?, NOW(), NOW());";
+    $bind_param_type = "sssss";
+    $bind_param_var = [$name, $lastname, $date_birth, $document_type, $document_number];
 
 
     $results = modifyData($connection, $query, $bind_param_type, $bind_param_var);
 
     if($results > 0){
+        //se ho risultati prendo l'ultima riga inserita
         $query = "SELECT * from `ospiti` ORDER BY `id` DESC LIMIT 1;";
         $bind_param_type = "s";
         $bind_param_var = $id;

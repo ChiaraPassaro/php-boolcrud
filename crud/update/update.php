@@ -31,30 +31,41 @@
 ?>
 <div class="container">
     <div class="row">
+        <h2>Modifica Ospite</h2>
+    </div>
         <form action="<?php echo $path; ?>database.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input class="form-control" type="text" name="name" id="name" value="<?php echo $result['name']; ?>">
+             <div class="row">
+                <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
+                <div class="form-group col-6">
+                    <label for="name">Nome</label>
+                    <input class="form-control" type="text" name="name" id="name" value="<?php echo $result['name']; ?>">
+                </div>
+                <div class="form-group col-6 ">
+                    <label for="lastname">Cognome</label>
+                    <input class="form-control" type="text" name="lastname" id="lastname" value="<?php echo $result['lastname']; ?>">
+                </div>
+             </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="date_of_birth">Data di nascita</label>
+                    <input class="form-control" type="text" name="date_of_birth" id="date_of_birth" value="<?php echo $result['date_of_birth']; ?>">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="lastname">Cognome</label>
-                <input class="form-control" type="text" name="lastname" id="lastname" value="<?php echo $result['lastname']; ?>">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="document_type">Tipo di documento</label>
+                    <input class="form-control" type="text" name="document_type" id="document_type" value="<?php echo $result['document_type']; ?>">
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="document_number">Numero di documento</label>
+                    <input class="form-control" type="text" name="document_number" id="document_number" value="<?php echo $result['document_number']; ?>">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="date_of_birth">Data di nascita</label>
-                <input class="form-control" type="text" name="date_of_birth" id="date_of_birth" value="<?php echo $result['date_of_birth']; ?>">
-            </div>
-            <div class="form-group">
-                <label for="document_type">Tipo di documento</label>
-                <input class="form-control" type="text" name="document_type" id="document_type" value="<?php echo $result['document_type']; ?>">
-            </div>
-            <div class="form-group">
-                <label for="document_number">Numero di documento</label>
-                <input class="form-control" type="text" name="document_number" id="document_number" value="<?php echo $result['document_number']; ?>">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Salva">
+            <div class="row">
+                <div class="form-group col-12">
+                    <input type="submit" class="btn btn-primary" value="Salva">
+                </div>
             </div>
 
         </form>

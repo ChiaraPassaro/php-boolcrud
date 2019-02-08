@@ -59,14 +59,7 @@
 
         if(!empty($bind_param_type) && !empty($bind_param_var)){
             if(gettype($bind_param_var) === 'array'){
-                /*$bind_param_type = str_split($bind_param_type);
-                $new_bind_values = array_map(null, $bind_param_type, $bind_param_var);
-                var_dump($new_bind_values);die();
-                foreach ($new_bind_values as $key => $value){
-                    $statement->bind_param($key, $value);
-                }*/
                 $statement->bind_param($bind_param_type, ...$bind_param_var);
-
             } else {
                 $statement->bind_param($bind_param_type, $bind_param_var);
             }
@@ -90,14 +83,7 @@ function modifyData($connection, $query, $bind_param_type, $bind_param_var){
 
     if(!empty($bind_param_type) && !empty($bind_param_var)){
         if(gettype($bind_param_var) === 'array'){
-            /*$bind_param_type = str_split($bind_param_type);
-            $new_bind_values = array_map(null, $bind_param_type, $bind_param_var);
-            var_dump($new_bind_values);die();
-            foreach ($new_bind_values as $key => $value){
-                $statement->bind_param($key, $value);
-            }*/
             $statement->bind_param($bind_param_type, ...$bind_param_var);
-
         } else {
             $statement->bind_param($bind_param_type, $bind_param_var);
         }
@@ -106,8 +92,6 @@ function modifyData($connection, $query, $bind_param_type, $bind_param_var){
     $statement->execute();
     $result = $statement->affected_rows;
     $statement->fetch();
-
-    //chiudo connessione
     $statement->close();
     return $result;
 }
