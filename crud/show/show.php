@@ -6,11 +6,11 @@
 
     include '../../partials/_header.php';
 
-    include_once '../../database.php';
+    include_once 'database.php';
 
 
     if(!empty($results)){
-        $guests = $results;
+        $guest = $results;
     } else {
         echo 'Non si sono record';
         die();
@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
 
-            <h1 class="table-title">Ospiti</h1>
+            <h1 class="table-title">Ospite - ID  <?php echo $guest['id']; ?> </h1>
             <table class="table table-prenotazioni">
                 <thead>
                 <tr>
@@ -36,8 +36,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        foreach ($guests as $guest){ ?>
                         <tr>
                             <td><?php echo $guest['id']; ?></td>
                             <td><?php echo $guest['name']; ?></td>
@@ -48,8 +46,6 @@
                             <td><?php echo $guest['created_at']; ?></td>
                             <td><?php echo $guest['updated_at']; ?></td>
                         </tr>
-                    <?php }
-                    ?>
                 </tbody>
             </table>
         </div>

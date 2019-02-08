@@ -1,7 +1,7 @@
 <?php
 
     //first version
-    function getPath(){
+    /*function getPath(){
         $path_server = $_SERVER['HTTP_HOST'];
         $path_folders = explode('/', $_SERVER['PHP_SELF']);
         $path_folders_number = count($path_folders);
@@ -14,7 +14,7 @@
             return $path;
         }
         return $path_server;
-    }
+    }*/
 
     //ProjectPath by ChiaraEmanuele
     //How to Use
@@ -24,7 +24,6 @@
     function getProjectPath($calling) {
         $host = $_SERVER['HTTP_HOST'];
         $self = $_SERVER['PHP_SELF'];
-        var_dump($calling);
         return 'http://' . $host . str_replace($calling, '', $self);
     }
 
@@ -47,7 +46,6 @@
     //    $bind_param_var = 55;
     //    $results = getData($connection, $query, $bind_param_type, $bind_param_var);
     function getData($connection, $query, $bind_param_type, $bind_param_var){
-
         $statement = $connection->prepare($query);
         if(!empty($bind_param_type) && !empty($bind_param_var)){
             $statement->bind_param($bind_param_type, $bind_param_var);
@@ -77,7 +75,7 @@ function getResults($result){
     elseif ($result->num_rows === 1) {
         $results = $result->fetch_assoc();
     }
-    else {
+    else{
         //se non ho risultati ritorno un messaggio di errore
         return 'Non ci sono risultati';
     }
