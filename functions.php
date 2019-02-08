@@ -24,7 +24,15 @@
     function getProjectPath($calling) {
         $host = $_SERVER['HTTP_HOST'];
         $self = $_SERVER['PHP_SELF'];
-        return 'http://' . $host . str_replace($calling, '', $self);
+        $replace = str_replace($calling, '', $self);
+
+        if(strpos($replace, '//')){
+            $replace_new = str_replace('//', '/', $replace);
+            return 'http://' . $host . $replace_new;
+        }
+
+        return 'http://' . $host . $replace;
+
     }
 
     function connectDB(){

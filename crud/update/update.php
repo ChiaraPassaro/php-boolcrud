@@ -14,6 +14,7 @@
 
     include '../../partials/_header.php';
 
+
     if(!empty($_GET['id'])){
         $connection = connectDB();
         $query = "SELECT * from ospiti WHERE id = ?";
@@ -25,10 +26,12 @@
         die();
     }
 
+    $this_file = basename(__FILE__);
+    $path = getProjectPath($this_file);
 ?>
 <div class="container">
     <div class="row">
-        <form action="../database.php" method="post">
+        <form action="<?php echo $path; ?>database.php" method="post">
             <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
             <div class="form-group">
                 <label for="name">Nome</label>

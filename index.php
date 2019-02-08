@@ -14,7 +14,6 @@
     include_once 'functions.php';
     $this_file = basename(__FILE__);
     $path = getProjectPath($this_file);
-
     include 'partials/_header.php';
     include 'database.php';
 
@@ -33,7 +32,10 @@
     ?>
 
     <div class="container">
-        <div class="row">
+    <div class="row">
+        <a class="btn btn-primary" href="<?php echo $path ;?>crud/create/create.php">Inserisci un ospite</a>
+    </div>
+    <div class="row">
 
             <h1 class="table-title">Ospiti</h1>
             <table class="table table-prenotazioni">
