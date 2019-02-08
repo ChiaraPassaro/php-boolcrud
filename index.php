@@ -16,9 +16,7 @@
     $path = getProjectPath($this_file);
 
     include 'partials/_header.php';
-
-    include_once 'database.php';
-
+    include 'database.php';
 
 
     if(!empty($results)){
@@ -26,6 +24,10 @@
     } else {
         echo 'Non si sono record';
         die();
+    }
+
+    if(!empty($_POST[id])){
+        $modified_id =  intval($_POST[id]);
     }
 
     ?>
@@ -47,8 +49,14 @@
                 </thead>
                 <tbody>
                     <?php
-                        foreach ($guests as $guest){ ?>
-                        <tr>
+                        foreach ($guests as $guest){
+                            if($modified_id === $guest['id']){
+                                $class = 'tr-modified';
+                            } else {
+                                $class = 'tr';
+                            }
+                            ?>
+                        <tr class="<?php echo $class; ?>">
                             <td><?php echo $guest['id']; ?></td>
                             <td><?php echo $guest['name']; ?></td>
                             <td><?php echo $guest['lastname']; ?></td>

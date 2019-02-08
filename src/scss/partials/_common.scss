@@ -1,0 +1,10 @@
+.tr-modified{
+  background: lightblue;
+  animation-name: flash;
+  animation-duration: 1s;
+}
+
+@keyframes flash {
+  0%   {background-color: blue;}
+  100%  {background-color: lightblue;}
+}

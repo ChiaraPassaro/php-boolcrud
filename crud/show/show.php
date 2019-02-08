@@ -40,7 +40,7 @@
                             <td><?php echo $guest['id']; ?></td>
                             <td><?php echo $guest['name']; ?></td>
                             <td><?php echo $guest['lastname']; ?></td>
-                            <td><?php echo $guest['date_of_bird']; ?></td>
+                            <td><?php echo $guest['date_of_birth']; ?></td>
                             <td><?php echo $guest['document_type']; ?></td>
                             <td><?php echo $guest['document_number']; ?></td>
                             <td><?php echo $guest['created_at']; ?></td>

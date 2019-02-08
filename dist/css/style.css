@@ -1,5 +1,33 @@
 @charset "UTF-8";
 
+.tr-modified {
+  background: lightblue;
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    background-color: blue;
+  }
+
+  100% {
+    background-color: lightblue;
+  }
+}
+
+@keyframes flash {
+  0% {
+    background-color: blue;
+  }
+
+  100% {
+    background-color: lightblue;
+  }
+}
+
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
