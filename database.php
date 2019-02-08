@@ -4,6 +4,6 @@
     $connection = connectDB();
     $query = "SELECT * FROM ospiti";
     $results = getData($connection, $query, null, null);
-    var_dump($results);
+    return $results;
 ?>
 
