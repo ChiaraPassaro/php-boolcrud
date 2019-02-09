@@ -14,10 +14,15 @@
 
     $path = 'http://' . $path_server . '/' . $path_root . '/';
 
+    $post_arguments = ['name', 'lastname', 'date_of_birth', 'document_type', 'document_number'];
+    //Formato data valido 1964-04-02
+    $date_format = 'Y-m-d';
+
     if(!empty($_POST['id'])
     && !empty($_POST['name'])
     && !empty($_POST['lastname'])
     && !empty($_POST['date_of_birth'])
+    && validateDate($_POST['date_of_birth'], $date_format)
     && !empty($_POST['document_type'])
     && !empty($_POST['document_number'])){
         $id = $_POST['id'];
@@ -27,8 +32,25 @@
         $document_type = $_POST['document_type'];
         $document_number = $_POST['document_number'];
     } else {
-        die('Parametri non passati');
-    }
+    //se c'è un errore creo un form che mi segnala gli input sbagliati
+    ?>
+            <form action="update.php" method="post" id="updated-form">
+                <?php
+                //se non c'è un campo invio errore altrimenti rinvio il dato
+                foreach ($post_arguments as $argument){
+                    if(empty($_POST[$argument])){
+                        echo  "<input type='hidden' name='" . $argument . "_error' value='true'>";
+                    }
+                }
+                ?>
+
+                <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
+            </form>
+        </div>
+    </div>
+    <script src="../../dist/js/main.js"></script>
+
+    <?php return; }
 
     $connection = connectDB();
     $query = "UPDATE `ospiti` SET `name` = ?, `lastname` = ?, `date_of_birth` = ?, `document_type` = ?, `document_number` = ? WHERE `id` = ?";
