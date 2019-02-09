@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="form-group col-6">
                     <label for="date_of_birth">Data di nascita</label>
-                    <input class="form-control" type="text" name="date_of_birth" id="date_of_birth" value="<?php echo $result['date_of_birth']; ?>">
+                    <input class="form-control" type="date" name="date_of_birth" id="date_of_birth" value="<?php echo $result['date_of_birth']; ?>">
                 </div>
             </div>
             <div class="row">

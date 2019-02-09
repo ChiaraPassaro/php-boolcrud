@@ -50,7 +50,7 @@
                                 <a class="btn btn-success" href="<?php echo $path ;?>crud/update/update.php/?id=<?php echo $guest['id']; ?>">Modifica</a>
                             </td>
                             <td>
-                                <form action="<?php echo $path ;?>crud/delete/delete.php" method="post">
+                                <form action="<?php echo $path ;?>crud/delete/database.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $guest['id']; ?>">
                                     <button class="btn btn-danger" type="submit">Elimina</button></form>
                             </td>

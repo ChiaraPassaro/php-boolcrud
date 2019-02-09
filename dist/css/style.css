@@ -4,35 +4,47 @@
   margin-bottom: 40px;
 }
 
+.alert {
+  background: #fff3cd;
+  -webkit-animation-name: flash;
+          animation-name: flash;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
 .table {
   margin-top: 30px;
 }
 
 .tr-modified {
-  background: lightblue;
+  background: #fff3cd;
   -webkit-animation-name: flash;
           animation-name: flash;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 
 @-webkit-keyframes flash {
   0% {
-    background-color: blue;
+    background-color: #ffdb67;
   }
 
   100% {
-    background-color: lightblue;
+    background-color: #fff3cd;
   }
 }
 
 @keyframes flash {
   0% {
-    background-color: blue;
+    background-color: #ffdb67;
   }
 
   100% {
-    background-color: lightblue;
+    background-color: #fff3cd;
   }
 }
 

@@ -57,6 +57,7 @@
         else { ?>
             <form action="<?php echo $path; ?>index.php" method="post" id="updated-form">
                 <input type="hidden" name="id" value="<?php echo $guest['id']; ?>">
+                <input type="hidden" name="message" value="Ospite inserito con ID <?php echo $guest['id']; ?>">
             </form>
         <?php } ?>
 
