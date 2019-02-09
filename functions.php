@@ -125,6 +125,13 @@ function validateDate($date, $format)
     }
 }
 
+function getFormatDate($date, $format = 'Y-m-d H:i:s')
+{
+        setlocale(LC_ALL, 'it_IT.UTF-8');
+        $temp = date_create_from_format($format, $date);
+        return strftime("%Y-%m-%d", $temp->getTimestamp());
+}
+
 
 
 ?>

@@ -15,8 +15,6 @@
     $path = 'http://' . $path_server . '/' . $path_root . '/';
 
     $post_arguments = ['name', 'lastname', 'date_of_birth', 'document_type', 'document_number'];
-    //Formato data valido 1964-04-02
-    $date_format = 'Y-m-d';
 
     if(!empty($_POST['id'])
     && !empty($_POST['name'])
@@ -28,7 +26,7 @@
         $id = $_POST['id'];
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
-        $date_birth = $_POST['date_of_birth'];
+        $date_birth = getFormatDate($_POST['date_of_birth']);
         $document_type = $_POST['document_type'];
         $document_number = $_POST['document_number'];
     } else {

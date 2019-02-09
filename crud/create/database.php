@@ -26,7 +26,7 @@
         && !empty($_POST['document_number'])){
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
-        $date_birth = $_POST['date_of_birth'];
+        $date_birth = getFormatDate($_POST['date_of_birth'], $date_format);
         $document_type = $_POST['document_type'];
         $document_number = $_POST['document_number'];
     } else {
@@ -40,6 +40,9 @@
              if(empty($_POST[$argument])){
                 echo  "<input type='hidden' name='" . $argument . "_error' value='true'>";
              } else {
+                 if($argument === 'date_of_birth'){
+                    echo  "<input type='hidden' name='$argument' value='$date_birth'>";
+                 }
                 echo  "<input type='hidden' name='$argument' value='$_POST[$argument]'>";
              }
          } ?>
