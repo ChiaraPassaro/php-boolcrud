@@ -9,7 +9,12 @@
     <title>Hotel Booleana</title>
 </head>
 <body>
-    <div class="navbar navbar-light bg-light">
-        <h1><a href="<?php echo $path ?>">Hotel Booleana</a></h1>
+    <div class="navbar navbar-light bg-light navbar-b">
+        <div class="container">
+            <div class="row">
+                <h1><a href="<?php echo $path ?>">Hotel Booleana</a></h1>
+            </div>
+
+        </div>
     </div>
 

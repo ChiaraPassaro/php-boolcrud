@@ -31,22 +31,23 @@
 
     ?>
 
-    <div class="container">
-    <div class="row">
-        <a class="btn btn-primary" href="<?php echo $path ;?>crud/create/create.php">Inserisci un ospite</a>
-    </div>
-    <div class="row">
-
-            <h1 class="table-title">Ospiti</h1>
+    <div class="container main">
+        <div class="row">
+            <div class="col-10">
+                <h1 class="table-title">Ospiti</h1>
+            </div>
+            <div class="col-2 align-right">
+                <a class="btn btn-primary" href="<?php echo $path ;?>crud/create/create.php">Inserisci un ospite</a>
+            </div>
+        </div>
+        <div class="row">
             <table class="table table-prenotazioni">
                 <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Cognome</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
+                    <th colspan="3"></th>
                 </tr>
                 </thead>
                 <tbody>
