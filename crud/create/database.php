@@ -14,9 +14,13 @@
 
     $path = 'http://' . $path_server . '/' . $path_root . '/';
 
+    //Formato data valido 1964-04-02
+    $date_format = 'Y-m-d';
+
     if(!empty($_POST['name'])
         && !empty($_POST['lastname'])
         && !empty($_POST['date_of_birth'])
+        && validateDate($_POST['date_of_birth'], $date_format)
         && !empty($_POST['document_type'])
         && !empty($_POST['document_number'])){
         $name = $_POST['name'];
@@ -24,10 +28,63 @@
         $date_birth = $_POST['date_of_birth'];
         $document_type = $_POST['document_type'];
         $document_number = $_POST['document_number'];
-
     } else {
-        die('Parametri non passati');
-    }
+        //se c'è un errore creo un form che mi segnala gli input sbagliati
+    ?>
+
+     <form action="create.php" method="post" id="updated-form">
+         <input type="hidden" name="id" value="<?php echo $guest['id']; ?>">
+
+         <?php
+         //se non c'è un campo invio errore altrimenti rinvio il dato
+
+         //NAME
+         if(empty($_POST['name'])){ ?>
+             <input type="hidden" name="name_error" value="true">
+         <?php }
+         if (!empty($_POST['name'])) { ?>
+             <input type="hidden" name="name" value="<?php echo  $_POST['name']; ?>">
+         <? }
+
+         //Last Name
+         if(empty($_POST['lastname'])){ ?>
+             <input type="hidden" name="lastname_error" value="true">
+         <?php }
+         if(!empty($_POST['lastname'])){ ?>
+             <input type="hidden" name="lastname" value="<?php echo  $_POST['lastname']; ?>">
+         <?php }
+
+         //Date of birth
+        if(empty($_POST['date_of_birth']) || !validateDate($_POST['date_of_birth'], $date_format)){ ?>
+            <input type="hidden" name="date_of_birth_error" value="true">
+        <? }
+        if (!empty($_POST['date_of_birth'])) { ?>
+            <input type="hidden" name="date_of_birth" value="<?php echo $_POST['date_of_birth']; ?>">
+        <?php }
+
+        //document type
+        if(empty($_POST['document_type'])){ ?>
+            <input type="hidden" name="document_type_error" value="true">
+        <?php }
+        if (!empty($_POST['document_type'])) { ?>
+            <input type="hidden" name="document_type" value="<?php echo $_POST['document_type']; ?>">
+        <?php }
+
+         //document number
+        if(empty($_POST['document_number'])){ ?>
+            <input type="hidden" name="document_number_error" value="true">
+        <?php }
+        if (!empty($_POST['document_number'])) { ?>
+            <input type="hidden" name="document_number" value="<?php echo $_POST['document_number']; ?>">
+        <?php }
+        ?>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../dist/js/main.js"></script>
+
+   <?php return; }
 
     $connection = connectDB();
 

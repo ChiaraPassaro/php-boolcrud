@@ -1,5 +1,25 @@
 @charset "UTF-8";
 
+@-webkit-keyframes flash {
+  0% {
+    background-color: #ffdb67;
+  }
+
+  100% {
+    background-color: #fff3cd;
+  }
+}
+
+@keyframes flash {
+  0% {
+    background-color: #ffdb67;
+  }
+
+  100% {
+    background-color: #fff3cd;
+  }
+}
+
 .navbar-b {
   margin-bottom: 40px;
 }
@@ -28,24 +48,8 @@
           animation-iteration-count: 1;
 }
 
-@-webkit-keyframes flash {
-  0% {
-    background-color: #ffdb67;
-  }
-
-  100% {
-    background-color: #fff3cd;
-  }
-}
-
-@keyframes flash {
-  0% {
-    background-color: #ffdb67;
-  }
-
-  100% {
-    background-color: #fff3cd;
-  }
+.form-control.input-error {
+  border-color: red;
 }
 
 /*!

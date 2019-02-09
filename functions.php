@@ -115,7 +115,15 @@ function getResults($result){
     return $results;
 }
 
-
+function validateDate($date, $format)
+{
+    $this_date = DateTime::createFromFormat($format, $date);
+    if($this_date && $this_date->format($format) === $date){
+        return $date;
+    } else {
+        return false;
+    }
+}
 
 
 ?>
