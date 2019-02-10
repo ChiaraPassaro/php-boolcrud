@@ -10495,8 +10495,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/kja/sites/www/html/php-boolcrud/src/js/main.js */"./src/js/main.js");
-module.exports = __webpack_require__(/*! /home/kja/sites/www/html/php-boolcrud/src/scss/style.scss */"./src/scss/style.scss");
+__webpack_require__(/*! /Users/chiarapassaro/Sites/php-boolcrud/src/js/main.js */"./src/js/main.js");
+module.exports = __webpack_require__(/*! /Users/chiarapassaro/Sites/php-boolcrud/src/scss/style.scss */"./src/scss/style.scss");
 
 
 /***/ })

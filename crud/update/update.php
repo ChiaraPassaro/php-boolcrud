@@ -30,6 +30,13 @@
     $path = getProjectPath($this_file);
 ?>
 <div class="container">
+    <?php if(!empty($_POST)){ //se ho un dato in post c'è un errore?>
+        <div class="row">
+            <div class="alert alert-warning col-12 text-center mt-4" role="alert">
+                <h3><?php echo 'Errore nella compilazione dei dati'; ?></h3>
+            </div>
+        </div>
+    <?php }?>
     <div class="row">
         <h2>Modifica Ospite</h2>
     </div>

@@ -21,14 +21,15 @@
     if(!empty($results)){
         $guests = $results;
     } else {
-        echo 'Non si sono record';
+        echo 'Non sono presenti record';
         die();
     }
+
+    $modified_id = '';
 
     if(!empty($_POST['id']) && !empty($_POST['message'])){
         $modified_id =  intval($_POST['id']);
         $update_message =  $_POST['message'];
-
     }
 
     if(!empty($_POST['delete_message'])){

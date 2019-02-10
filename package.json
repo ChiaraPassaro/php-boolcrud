@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.php",
-  "dependencies": {},
+  "dependencies": {
+    "cross-env": "^5.2.0"
+  },
   "devDependencies": {
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
